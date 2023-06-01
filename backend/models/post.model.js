@@ -7,7 +7,7 @@ const postSchema = mongoose.Schema(
         },
         author : { 
          type : String,
-         required : true
+         required : false,
         },
         likers : { 
          type : [String]
