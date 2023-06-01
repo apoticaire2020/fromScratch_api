@@ -1,20 +1,13 @@
 const express = require('express');
+const { setPosts, getPosts, editPosts } = require('../controllers/post.controller');
 const router = express.Router();
 
     //GET
-router.get("/" , (req , res) => 
-    res.json({hello: "salamt abou banat"}) 
-)
+router.get("/" , getPosts)
      //POST
-router.post("/" , (req , res) => {
-            res.json({message : req.body})  
-                               }
-)
+router.post("/" , setPosts)
      //PUT
-router.put("/:id" , (req , res) => {
-            res.json({messageId  : req.params.id})
-}
-)
+router.put("/:id" , editPosts)
      //DELETE
 router.delete("/:id" , (req , res) => {
       res.json({messageId  : 'post deleted id = ' + req.params.id})
@@ -35,4 +28,3 @@ router.patch("/like-post/:id" , (req , res) =>{
 
 module.exports = router;
 
-//zZfXP3uYIOLX4ACQ
